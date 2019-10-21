@@ -46,7 +46,11 @@ Note: please write one or two lines here describing your solution.
 */
 
 function makeComputer(type, color, weight) {
-  // TODO: Your code here
+
+// i can not remember the right syntax of HOF but it works as a function that takes another function as a parameter here i may use 
+// a function with the computer parts than call it in higher order function 
+
+  
 }
 
 // Write a function displayComputer that can be used to display one computer.
@@ -73,8 +77,17 @@ uppercaseAll(strArr); ==> [ 'HELLO', 'WORLD', 'WHIRLED', 'PEAS' ]
 */
 
 function uppercaseAll(arrayOfStrings) {
-  // TODO: your code here
+  return map(arrayOfStrings, function(elem, key){
+     if(typeof elem === 'string'){
+      return elem.toUpperCase();
+    }
+    return elem;
+  });
 }
+
+// here the map will take the arrayoOfStrings and anoynmous function with two parameters 
+//en element and key then check for the type of the element if it is string it will applay the build-in function .toUpperCase 
+//otherwise if the element is in uppercase it will return it as it is 
 
 //=============================================================================
 /*                                  Q3                                       */
@@ -112,9 +125,16 @@ var data = [
 ];
 
 function highestPopulation(arrayOfObjects) {
-  // TODO: your code here
+  
+  return filter(arrayOfObjects function(number){
+    if (number > 500000000){
+      return number;
+    }
+  });
 }
-
+// filter will take the array of object and an anoynoumos function with parameter number than it will be applied 
+// on the varibale data the filter is working as an if statment to check if the number is greater than 500 million and return the number
+//if the condition is met 
 //=============================================================================
 /*                              Q4                                           */
 //=============================================================================
@@ -132,9 +152,15 @@ Note: please write one or two lines here describing your solution.
 */
 
 function halveAll(numbers) {
-  // your code is here
-}
+   return filter(numbers, function(number){
+    if (typeof number === 'number' ){
+      return number /2;
+    }
+  });
 
+}
+// as the same before here the filter will work to take numbers and function as a parameter and check if the input type is 
+//number if it is it will divide it by two 
 //=============================================================================
 /*                                  Q5                                       */
 //=============================================================================
@@ -148,7 +174,15 @@ values({first : 5, second: 'something' , third : 129}) ==> [5, 'something', 129]
 Note: please write one or two lines here describing your solution.
 */
 function values(obj) {
-  // TODO: your code here
-}
+
+       var total = 0; 
+       each(obj, function(number){
+        total = total + obj;
+       })
+       return total; 
+ }
+  // i did not have time to solve this question and i am not sure if i am using the appropriate method here 
+
+  
 
 //Good Luck :))
